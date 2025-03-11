@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnRoad Type</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+        <h1>
+            <span class="welcome-3d">Welcome</span>
+            <span class="to-3d">TO</span>
+            <span class="onroad-anim">ONROAD</span>
+            <span class="type-anim">TYPE</span>
+        </h1>
+        <button id="enter-btn">Enter</button>
+    </div>
+
+    <!-- Cookie Popup -->
+    <div id="cookie-popup" class="cookie-popup hidden">
+        <p>We use cookies to enhance your experience. Accept?</p>
+        <button id="accept-cookies">Accept</button>
+    </div>
+
+    <!-- Main UI -->
+    <div id="main-ui" class="container hidden">
+        <div class="header">
+            <h1>ONROAD TYPE</h1>
+            <div class="header-controls">
+                <button id="music-toggle">Music: On</button>
+                <button id="play-next">Play Next</button>
+                <button id="mode-toggle">Toggle Mode</button>
+            </div>
+        </div>
+        <div id="start-screen">
+            <h2>Start the Typing Test</h2>
+            <div class="options">
+                <button onclick="startTest(15)">15s</button>
+                <button onclick="startTest(30)">30s</button>
+                <button onclick="startTest(60)">60s</button>
+            </div>
+        </div>
+        <div id="test-ui" class="hidden">
+            <div class="test-container">
+                <div id="timer">00:00</div>
+                <div id="text-display" class="text-display"></div>
+                <input id="input-area" class="input-area" type="text" placeholder="Start typing..." disabled>
+            </div>
+            <div id="results" class="results hidden">
+                <div class="result-stats">
+                    <p>WPM: <span id="wpm">0</span></p>
+                    <p>Accuracy: <span id="accuracy">0%</span></p>
+                    <p>Errors: <span id="errors">0</span></p>
+                </div>
+                <div class="result-options">
+                    <button id="repeat-test">Repeat</button>
+                    <button id="next-test">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="past-results" class="past-results">
+            <h2>Past Tests</h2>
+            <ul id="past-tests-list"></ul>
+        </div>
+    </div>
+
+    <!-- Audio Element for Music -->
+    <audio id="music-player" loop autoplay>
+        <source src="Mac_Miller_-_Surf(48k).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
